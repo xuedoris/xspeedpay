@@ -1,4 +1,5 @@
 <?php
+
 namespace XSpeedPay;
 
 use XSpeedPay\Base\GatewayFactory;
