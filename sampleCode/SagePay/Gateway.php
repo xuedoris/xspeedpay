@@ -71,7 +71,6 @@ class Gateway extends AbstractGateway
     private function buildRequestData()
     {
         $data = [];
-        $data = ;
         return $data;
     }
 
