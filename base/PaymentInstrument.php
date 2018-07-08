@@ -7,5 +7,7 @@ namespace XSpeedPay\Base;
  */
 class PaymentInstrument
 {
+    private $method;
+
 
 }
