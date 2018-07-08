@@ -4,8 +4,8 @@
     },
     "autoload": {
         "psr-4": {
-            "XSpeedPay\\Base\\": "base/src/"
-        },
-        "classmap": ["base/src/XSpeedPay.php"]
+            "XSpeedPay\\Base\\": "base/src/",
+            "XSpeedPay\\Gateways\\": "base/gateways/"
+        }
     }
 }

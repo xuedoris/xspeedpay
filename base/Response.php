@@ -2,7 +2,6 @@
 
 namespace XSpeedPay\Base;
 
-
 /**
  * Class Response
  */
