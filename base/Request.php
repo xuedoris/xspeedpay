@@ -8,6 +8,16 @@ namespace XSpeedPay\Base;
 class Request
 {
     /**
+     * @var int
+     */
+    private $amount;
+    
+    /**
+     * @var string
+     */
+    private $currency;
+
+    /**
      * @var PaymentInstrument
      */
     private $paymentInstrument;

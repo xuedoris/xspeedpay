@@ -5,12 +5,20 @@ namespace XSpeedPay\Gateways;
 use GuzzleHttp\Client;
 use XSpeedPay\Base\BaseOperations;
 use XSpeedPay\Base\Request;
+use XSpeedPay\Base\Response;
 
 /**
  * Class Stripe
  */
 class Stripe implements BaseOperations
 {
+    private const URL = '';
+
+    /**
+     * @var string
+     */
+    private $apiKey;
+    
     /**
      * @var Client
      */
@@ -25,9 +33,17 @@ class Stripe implements BaseOperations
     }
 
     /**
+     * @param string $key
+     */
+    public function setApiKey(string $key)
+    {
+        $this->apiKey = $key;
+    }
+
+    /**
      * @inheritdoc
      */
-    public function authorize(Request $request)
+    public function authorize(Request $request): Response
     {
         // TODO: Implement authorize() method.
     }
@@ -35,15 +51,18 @@ class Stripe implements BaseOperations
     /**
      * @inheritdoc
      */
-    public function purchase(Request $request)
+    public function purchase(Request $request): Response
     {
-        // TODO: Implement purchase() method.
+        $data = [
+            'amount' => $request->getAmount(),
+            'currency' => $request->getCurrency(),
+        ];
     }
 
     /**
      * @inheritdoc
      */
-    public function void(Request $request)
+    public function void(Request $request): Response
     {
         // TODO: Implement void() method.
     }
@@ -51,7 +70,7 @@ class Stripe implements BaseOperations
     /**
      * @inheritdoc
      */
-    public function refund(Request $request)
+    public function refund(Request $request): Response
     {
         // TODO: Implement refund() method.
     }
@@ -59,7 +78,7 @@ class Stripe implements BaseOperations
     /**
      * @inheritdoc
      */
-    public function capture(Request $request)
+    public function capture(Request $request): Response
     {
         // TODO: Implement capture() method.
     }
