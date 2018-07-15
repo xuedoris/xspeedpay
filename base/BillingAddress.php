@@ -2,60 +2,27 @@
 
 namespace XSpeedPay\Base;
 
-
 class BillingAddress
 {
     /**
-     * @var string
+     * @var array
      */
-    private $email;
+    private $data;
 
     /**
-     * @var string
+     * @param array $data
      */
-    private $firstName;
-
-    /**
-     * @var string
-     */
-    private $lastName;
-
-    /**
-     * @var string
-     */
-    private $address;
-
-    /**
-     * @var string
-     */
-    private $address2;
-
-    /**
-     * @var string
-     */
-    private $city;
-
-    /**
-     * @var string
-     */
-    private $postalCode;
-
-    /**
-     * @var string
-     */
-    private $country;
-
-    /**
-     * @var string
-     */
-    private $phone;
+    public function __construct(array $data)
+    {
+        $this->data = $data;
+    }
 
     /**
      * @return string
      */
     public function getEmail(): string
     {
-        return $this->email;
+        return $this->data['email'];
     }
 
     /**
@@ -63,7 +30,7 @@ class BillingAddress
      */
     public function getFirstName(): string
     {
-        return $this->firstName;
+        return $this->data['firstName'];
     }
 
     /**
@@ -71,7 +38,7 @@ class BillingAddress
      */
     public function getLastName(): string
     {
-        return $this->lastName;
+        return $this->data['lastName'];
     }
 
     /**
@@ -79,7 +46,7 @@ class BillingAddress
      */
     public function getAddress(): string
     {
-        return $this->address;
+        return $this->data['address'];
     }
 
     /**
@@ -87,7 +54,7 @@ class BillingAddress
      */
     public function getAddress2(): string
     {
-        return $this->address2;
+        return $this->data['address2'];
     }
 
     /**
@@ -95,7 +62,7 @@ class BillingAddress
      */
     public function getCity(): string
     {
-        return $this->city;
+        return $this->data['city'];
     }
 
     /**
@@ -103,7 +70,7 @@ class BillingAddress
      */
     public function getPostalCode(): string
     {
-        return $this->postalCode;
+        return $this->data['postalCode'];
     }
 
     /**
@@ -111,7 +78,7 @@ class BillingAddress
      */
     public function getCountry(): string
     {
-        return $this->country;
+        return $this->data['country'];
     }
 
     /**
@@ -119,6 +86,6 @@ class BillingAddress
      */
     public function getPhone(): string
     {
-        return $this->phone;
+        return $this->data['phone'];
     }
 }
