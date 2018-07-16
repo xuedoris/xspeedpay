@@ -12,7 +12,7 @@ use XSpeedPay\Base\Response;
  */
 class Stripe implements BaseOperations
 {
-    private const URL = '';
+    private const URL = 'https://api.stripe.com/v1/';
 
     /**
      * @var string

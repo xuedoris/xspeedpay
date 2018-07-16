@@ -30,6 +30,22 @@ class Request
     /**
      * @return PaymentInstrument
      */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+    
+    /**
+     * @return PaymentInstrument
+     */
+    public function getCurrency()
+    {
+        return $this->$currency;
+    }
+    
+    /**
+     * @return PaymentInstrument
+     */
     public function getPaymentInstrument()
     {
         return $this->paymentInstrument;
