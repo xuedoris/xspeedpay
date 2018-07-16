@@ -26,9 +26,21 @@ class Request
      * @var BillingAddress
      */
     private $billingAddress;
+    
+    
+    /**
+     * @param array $param: Expected keys: amount,currency,paymentInstrument,billingAddress
+     */
+    public function __construct(array $param)
+    {
+        $this->amount = $param['amount'];
+        $this->currency = $param['currency'];
+        $this->paymentInstrument = $param['payment'];
+        $this->billingAddress = $param['billingAddress'];
+    }
 
     /**
-     * @return PaymentInstrument
+     * @return amount
      */
     public function getAmount()
     {
@@ -36,7 +48,7 @@ class Request
     }
     
     /**
-     * @return PaymentInstrument
+     * @return currency
      */
     public function getCurrency()
     {

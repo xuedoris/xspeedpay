@@ -50,13 +50,20 @@ class Stripe implements BaseOperations
 
     /**
      * @inheritdoc
+     * curl https://api.stripe.com/v1/charges \
+        -u sk_test_BQokikJOvBiI2HlWgH4olfQ2: \
+        -d amount=2000 \
+        -d currency=usd \
+        -d source=tok_mastercard \
+        -d description="Charge for lily.robinson@example.com"
      */
     public function purchase(Request $request): Response
     {
-        $data = [
-            'amount' => $request->getAmount(),
-            'currency' => $request->getCurrency(),
-        ];
+        $finalURL = self::URL . 'charges \\';
+        $finalURL .= '-u ' . $this->apiKey . ': \\';
+        $finalURL .= '-d ' . $request->getAmount() . ' \\';
+        $finalURL .= '-d ' . $request->getCurrency()->getCode() . ' \\';
+        echo $finalURL;
     }
 
     /**
